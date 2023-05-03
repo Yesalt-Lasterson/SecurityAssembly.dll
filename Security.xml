@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Security</name>
+    </assembly>
+    <members>
+        <member name="T:Permissions.IPermssionsLevel">
+            <summary>
+             Contains values that the enum PermissionLvl is supposed to have.
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.Suspended">
+            <summary>
+            This is the Property Suspended corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.Untrusted">
+            <summary>
+            This is the Property Untrusted corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.Member">
+            <summary>
+            This is the Property Member corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.MVP">
+            <summary>
+            This is the Property MVP corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.Master">
+            <summary>
+            This is the Property Master corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.Moderator">
+            <summary>
+            This is the Property Mod corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.Admin">
+            <summary>
+            This is the Property Admin corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.OWNER">
+            <summary>
+            This is the Property OWNER corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="T:Permissions.MVPException">
+            <summary>
+            ME WARN U
+            </summary>
+        </member>
+        <member name="M:Permissions.MVPException.#ctor">
+            <summary>
+            eh
+            </summary>
+        </member>
+        <member name="M:Permissions.MVPException.#ctor(System.String)">
+            <summary>
+            IT STILL SAME
+            </summary>
+            <param name="message">Y U NO LISTEN</param>
+        </member>
+        <member name="M:Permissions.MVPException.#ctor(System.String,System.Exception)">
+            <summary>
+            also Eh
+            </summary>
+            <param name="message">message</param>
+            <param name="innerException">the other exception</param>
+        </member>
+        <member name="T:Permissions.SecurityRights">
+            <summary>
+            The SecurityRights Struct that contains all of the code needed to check for permissions with one Parameter from you
+            </summary>
+        </member>
+        <member name="M:Permissions.SecurityRights.#ctor(Permissions.PermissionLvl)">
+            <summary>
+            The Constructor of SecurityRights To let all of it's properties have values for Variable to be usefull
+            </summary>
+            <param name="PermissionsLevel">Is the value that you provided</param>
+        </member>
+        <member name="M:Permissions.SecurityRights.ToSecurityRights(Permissions.PermissionLvl)">
+            <summary>
+            If u wat to be in the safe side also allows enum called PermissionLvl
+            </summary>
+            <param name="PermissionsLevel">Is the value that you provided</param>
+        </member>
+        <member name="M:Permissions.SecurityRights.ToSecurityRights(System.String)">
+            <summary>
+            Makes Code Simpler by allowing to declare variable by string
+            </summary>
+            <param name="PermissionsLevel">Is the value that you provided</param>
+        </member>
+        <member name="M:Permissions.SecurityRights.op_Implicit(Permissions.PermissionLvl)~Permissions.SecurityRights">
+            <summary>
+            This Is like ToSecurityRights() but fancier and make variables even better!
+            </summary>
+            <param name="PermissionLevel">This is a local variable that reflects the value given by You!</param>
+        </member>
+        <member name="M:Permissions.SecurityRights.op_Implicit(System.String)~Permissions.SecurityRights">
+            <summary>
+            This is like the other SecurityRights but for strings so u can input STRINGS!
+            </summary>
+            <param name="PermissionLevel">its also a local var that reflects your input!</param>
+        </member>
+        <member name="M:Permissions.SecurityRights.Equals(System.Object)">
+            <summary>
+            This Does all the equals that
+            </summary>
+            <param name="obj">it is the object in question</param>
+            <returns>returns false or true if everything it checks checks out</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.Equals(Permissions.SecurityRights)">
+            <summary>
+            Equals cousin
+            </summary>
+            <param name="other">other stuff</param>
+            <returns>returns if everything checks out again</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.GetHashCode">
+            <summary>
+            hacker hashes
+            </summary>
+            <returns>returns the hash</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.op_Equality(Permissions.SecurityRights,Permissions.SecurityRights)">
+            <summary>
+            It is equality
+            </summary>
+            <param name="left">the left operand</param>
+            <param name="right">the right operand</param>
+            <returns></returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.op_Inequality(Permissions.SecurityRights,Permissions.SecurityRights)">
+            <summary>
+            it is not equal operator
+            </summary>
+            <param name="left">left operand</param>
+            <param name="right">right operand</param>
+            <returns></returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.ToArray">
+            <summary>
+            This is an Array to Give all of the values of SecurityRights's Properties
+            </summary>
+            <returns>Returns All The Properties of SecurityRights</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.HasRequiredPermissions(Permissions.PermissionLvl,System.Boolean[],Permissions.PermissionLvl[])">
+            <summary>
+            Determines whether the current SecurityRights object meets the specified requirements.
+            </summary>
+            <param name="minimumPermissionLevel">The minimum required Permissions level.</param>
+            <param name="requiredPermissions">An array of required permission values.</param>
+            <param name="blockedPermissionLevels">An array of blocked permission levels.</param>
+            <returns>True if the current SecurityRights object meets the specified requirements; otherwise, false.</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.ToString">
+            <summary>
+            The ToString Method so it actually returns something good
+            </summary>
+            <returns>PermLvl the Permission Level of the object or The enum</returns>
+        </member>
+        <member name="T:Permissions.PermissionLvl">
+            <summary>
+            This is an Enum that contains All the possible values that SecurityRights can have
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.Suspended">
+            <summary>
+            This is the Suspended value and means user BANNED
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.Untrusted">
+            <summary>
+            This is the Untrusted value and means user is Untrusted or SUS
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.Member">
+            <summary>
+            This is the Member value and is the most common
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.MVP">
+            <summary>
+            This is the MVP value and is a Tier above Member but is unused dont use or exception
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.Master">
+            <summary>
+            This is the Master value and is actually a Tier above member and contains VIP Privillages
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.Moderator">
+            <summary>
+            This is the Mod value I think u know what it is moderator...
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.Admin">
+            <summary>
+            ADMIN TIME
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.OWNER">
+            <summary>
+            Dangerous Use With Caution...
+            </summary>
+        </member>
+    </members>
+</doc>
