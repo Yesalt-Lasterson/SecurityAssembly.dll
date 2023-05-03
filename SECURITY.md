@@ -1,22 +1,15 @@
 # Security Policy
 
 ## Supported Versions
-Most Recent
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
 Most Recent Only!
+so below it will always be the most recent or bottom option so next version will be only supported after developed.
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 1.0.0.0 | :x:                |
+| 1.1.0.0 | :x:                |
+| 1.1.1.0 | :x:                |
+| 1.2.0.0 | :white_check_mark: |
 
 ## Reporting a Vulnerability
-tag with SECURITY
-Use this section to tell people how to report a vulnerability.
-Tag with SECURITY in Issues
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
-U might get update when I open old visual studio community 2022
+If u see a security vulnerability say so in issues and tag with SECURITY
+U will get answer when I see and fixed when I figure out how to.
