@@ -49,6 +49,21 @@
             This is the Property OWNER corresponding to the values in the enum PermissionLvl
             </summary>
         </member>
+        <member name="T:Permissions.IPermissionsCompatible">
+            <summary>
+            Provides Variables needed to be compatible with the SecurityRights Struct
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermissionsCompatible.Rights">
+            <summary>
+            This is the variable needed to declare a SecurityRights instance
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermissionsCompatible.MinimumPermssionLvl">
+            <summary>
+            Variable needed for the HasRequiredPermissions Method
+            </summary>
+        </member>
         <member name="T:Permissions.MVPException">
             <summary>
             ME WARN U
@@ -82,6 +97,12 @@
             The Constructor of SecurityRights To let all of it's properties have values for Variable to be usefull
             </summary>
             <param name="PermissionsLevel">Is the value that you provided</param>
+        </member>
+        <member name="M:Permissions.SecurityRights.#ctor(System.Boolean[])">
+            <summary>
+            This is to be able to turn an ID to a SecurityRights instance
+            </summary>
+            <param name="rawData">The RAW Data</param>
         </member>
         <member name="M:Permissions.SecurityRights.ToSecurityRights(Permissions.PermissionLvl)">
             <summary>
@@ -157,6 +178,14 @@
             <param name="requiredPermissions">An array of required permission values.</param>
             <param name="blockedPermissionLevels">An array of blocked permission levels.</param>
             <returns>True if the current SecurityRights object meets the specified requirements; otherwise, false.</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.WantID(Permissions.SecurityRights,System.String)">
+            <summary>
+            This is if u want ID
+            </summary>
+            <param name="rights">The SecurityRights instance required to make ID</param>
+            <param name="Name">The name o user</param>
+            <returns></returns>
         </member>
         <member name="M:Permissions.SecurityRights.ToString">
             <summary>
