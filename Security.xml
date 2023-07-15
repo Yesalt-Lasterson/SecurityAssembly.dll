@@ -83,29 +83,17 @@
             </summary>
             <param name="PermissionsLevel">Is the value that you provided</param>
         </member>
-        <member name="M:Permissions.SecurityRights.ToSecurityRights(Permissions.PermissionLvl)">
+        <member name="M:Permissions.SecurityRights.ToPermission(Permissions.PermissionLvl)">
             <summary>
             If u wat to be in the safe side also allows enum called PermissionLvl
             </summary>
             <param name="PermissionsLevel">Is the value that you provided</param>
         </member>
-        <member name="M:Permissions.SecurityRights.ToSecurityRights(System.String)">
+        <member name="M:Permissions.SecurityRights.ToPermission(System.String)">
             <summary>
             Makes Code Simpler by allowing to declare variable by string
             </summary>
             <param name="PermissionsLevel">Is the value that you provided</param>
-        </member>
-        <member name="M:Permissions.SecurityRights.op_Implicit(Permissions.PermissionLvl)~Permissions.SecurityRights">
-            <summary>
-            This Is like ToSecurityRights() but fancier and make variables even better!
-            </summary>
-            <param name="PermissionLevel">This is a local variable that reflects the value given by You!</param>
-        </member>
-        <member name="M:Permissions.SecurityRights.op_Implicit(System.String)~Permissions.SecurityRights">
-            <summary>
-            This is like the other SecurityRights but for strings so u can input STRINGS!
-            </summary>
-            <param name="PermissionLevel">its also a local var that reflects your input!</param>
         </member>
         <member name="M:Permissions.SecurityRights.Equals(System.Object)">
             <summary>
@@ -157,12 +145,6 @@
             <param name="requiredPermissions">An array of required permission values.</param>
             <param name="blockedPermissionLevels">An array of blocked permission levels.</param>
             <returns>True if the current SecurityRights object meets the specified requirements; otherwise, false.</returns>
-        </member>
-        <member name="M:Permissions.SecurityRights.ToString">
-            <summary>
-            The ToString Method so it actually returns something good
-            </summary>
-            <returns>PermLvl the Permission Level of the object or The enum</returns>
         </member>
         <member name="T:Permissions.PermissionLvl">
             <summary>

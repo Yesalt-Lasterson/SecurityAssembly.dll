@@ -6,3 +6,5 @@ Here's how to use this .dll, first u need to refrence the .dll on whatever u are
 'HasRequiredPermissions', 'ToSecurityRights' everithing else is private u no need. Enum has these values 'Suspended', 'Untrusted', 'Member', 'MVP' <-- Don't use or else Exception 'Master', 'Moderator', 'Admin', 'OWNER' and those are all of those values and for the interface its just a copy of the enum values just has type PermissionLvl the enum also are properties.
 ## TL;DR
 Don't use MVP value in Enum or exception will happen
+
+Version 1.0.0.0

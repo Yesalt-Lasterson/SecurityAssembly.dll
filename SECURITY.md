@@ -9,6 +9,7 @@ so below it will always be the most recent or bottom option so next version will
 | 1.1.0.0 | :x:                |
 | 1.1.1.0 | :x:                |
 | 1.2.0.0 | :white_check_mark: |
+| 2.0.0.0 | :white_check_mark: |
 
 ## Reporting a Vulnerability
 If u see a security vulnerability say so in issues and tag with SECURITY
