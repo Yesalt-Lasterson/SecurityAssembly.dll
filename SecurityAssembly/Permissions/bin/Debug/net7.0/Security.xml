@@ -1,0 +1,670 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Security</name>
+    </assembly>
+    <members>
+        <member name="T:Permissions.ID">
+            <summary>
+            The ID class for easy passing of variables between programs!
+            </summary>
+        </member>
+        <member name="E:Permissions.ID.IDNULLFLAGED">
+            <summary>
+            The Event that is raized when ID is null!
+            </summary>
+        </member>
+        <member name="M:Permissions.ID.#ctor(Permissions.SecurityRights,System.String)">
+            <summary>
+            What makes an ID
+            </summary>
+            <param name="rights">the SecurityRights Variable required to mkae an ID</param>
+            <param name="name">the extra info required to make an identifier for ID</param>
+        </member>
+        <member name="M:Permissions.ID.#ctor(System.Boolean)">
+            <summary>
+            If the ID failed Use To raise Event and Throw Exception
+            </summary>
+            <param name="failed">if false will make ID all zeros</param>
+            <exception cref="T:Permissions.IDException">The aforementioned Exception!</exception>
+        </member>
+        <member name="M:Permissions.ID.RequestID">
+            <summary>
+            It gives u ID
+            </summary>
+            <returns>Returns ID int[]</returns>
+        </member>
+        <member name="T:Permissions.IDNULLFLAGEDEventArgs">
+            <summary>
+            What happens when Event is raised!
+            </summary>
+        </member>
+        <member name="M:Permissions.IDNULLFLAGEDEventArgs.#ctor(System.Object,System.EventHandler)">
+            <summary>
+            The actual Things that Happen
+            </summary>
+            <param name="sender">Who sended it</param>
+            <param name="handler">The event</param>
+        </member>
+        <member name="T:Permissions.IDException">
+            <summary>
+            This Exception Is thrown when ID is null ID cannot be null
+            </summary>
+        </member>
+        <member name="M:Permissions.IDException.#ctor">
+            <summary>
+            The default constructor of IDException
+            </summary>
+        </member>
+        <member name="M:Permissions.IDException.#ctor(System.String)">
+            <summary>
+            Constructor of IDException that takes a custom message
+            </summary>
+            <param name="message">The Message</param>
+        </member>
+        <member name="M:Permissions.IDException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor that takes custom message and innerexception
+            </summary>
+            <param name="message">The Message</param>
+            <param name="innerException">Another Exception!</param>
+        </member>
+        <member name="T:Permissions.IPermssionsLevel">
+            <summary>
+             Contains values that the enum PermissionLvl is supposed to have.
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.Suspended">
+            <summary>
+            This is the Property Suspended corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.Untrusted">
+            <summary>
+            This is the Property Untrusted corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.Member">
+            <summary>
+            This is the Property Member corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.MVP">
+            <summary>
+            This is the Property MVP corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.Master">
+            <summary>
+            This is the Property Master corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.Moderator">
+            <summary>
+            This is the Property Mod corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.Admin">
+            <summary>
+            This is the Property Admin corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermssionsLevel.OWNER">
+            <summary>
+            This is the Property OWNER corresponding to the values in the enum PermissionLvl
+            </summary>
+        </member>
+        <member name="T:Permissions.IPermissionsCompatible">
+            <summary>
+            Provides Variables needed to be compatible with the SecurityRights Struct
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermissionsCompatible.Rights">
+            <summary>
+            This is the variable needed to declare a SecurityRights instance
+            </summary>
+        </member>
+        <member name="P:Permissions.IPermissionsCompatible.MinimumPermssionLvl">
+            <summary>
+            Variable needed for the HasRequiredPermissions Method
+            </summary>
+        </member>
+        <member name="T:Permissions.MVPException">
+            <summary>
+            ME WARN U
+            </summary>
+        </member>
+        <member name="M:Permissions.MVPException.#ctor">
+            <summary>
+            eh
+            </summary>
+        </member>
+        <member name="M:Permissions.MVPException.#ctor(System.String)">
+            <summary>
+            IT STILL SAME
+            </summary>
+            <param name="message">Y U NO LISTEN</param>
+        </member>
+        <member name="M:Permissions.MVPException.#ctor(System.String,System.Exception)">
+            <summary>
+            also Eh
+            </summary>
+            <param name="message">message</param>
+            <param name="innerException">the other exception</param>
+        </member>
+        <member name="T:Permissions.SecurityRights">
+            <summary>
+            The SecurityRights Struct that contains all of the code needed to check for permissions with one Parameter from you
+            </summary>
+        </member>
+        <member name="M:Permissions.SecurityRights.#ctor(Permissions.PermissionLvl)">
+            <summary>
+            The Constructor of SecurityRights To let all of it's properties have values for Variable to be usefull
+            </summary>
+            <param name="PermissionsLevel">Is the value that you provided</param>
+        </member>
+        <member name="M:Permissions.SecurityRights.#ctor(Permissions.ID)">
+            <summary>
+            The constructor that accepts ID as a valid SecurityRights Instance
+            </summary>
+            <param name="rawData">The ID</param>
+            <exception cref="T:Permissions.IDException">Happens When ID is null because It shouldn't be null under any circumstances memory error.</exception>
+        </member>
+        <member name="M:Permissions.SecurityRights.ToSecurityRights(Permissions.PermissionLvl)">
+            <summary>
+            If u wat to be in the safe side also allows enum called PermissionLvl
+            </summary>
+            <param name="PermissionsLevel">Is the value that you provided</param>
+        </member>
+        <member name="M:Permissions.SecurityRights.ToSecurityRights(System.String)">
+            <summary>
+            Makes Code Simpler by allowing to declare variable by string
+            </summary>
+            <param name="PermissionsLevel">Is the value that you provided</param>
+        </member>
+        <member name="M:Permissions.SecurityRights.ToSecurityRights(Permissions.ID)">
+            <summary>
+            Let's u make a SecurityRights Instance with ID!
+            </summary>
+            <param name="iD">The ID</param>
+            <returns>An ID</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.op_Implicit(Permissions.PermissionLvl)~Permissions.SecurityRights">
+            <summary>
+            This Is like ToSecurityRights() but fancier and make variables even better!
+            </summary>
+            <param name="PermissionLevel">This is a local variable that reflects the value given by You!</param>
+        </member>
+        <member name="M:Permissions.SecurityRights.op_Implicit(System.String)~Permissions.SecurityRights">
+            <summary>
+            This is like the other SecurityRights but for strings so u can input STRINGS!
+            </summary>
+            <param name="PermissionLevel">its also a local var that reflects your input!</param>
+        </member>
+        <member name="M:Permissions.SecurityRights.op_Implicit(Permissions.ID)~Permissions.SecurityRights">
+            <summary>
+            Makes it so that u can provide ID and it work
+            </summary>
+            <param name="iD">The ID</param>
+        </member>
+        <member name="M:Permissions.SecurityRights.Equals(System.Object)">
+            <summary>
+            This Does all the equals that
+            </summary>
+            <param name="obj">it is the object in question</param>
+            <returns>returns false or true if everything it checks checks out</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.Equals(Permissions.SecurityRights)">
+            <summary>
+            Equals cousin
+            </summary>
+            <param name="other">other stuff</param>
+            <returns>returns if everything checks out again</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.GetHashCode">
+            <summary>
+            hacker hashes
+            </summary>
+            <returns>returns the hash</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.op_Equality(Permissions.SecurityRights,Permissions.SecurityRights)">
+            <summary>
+            It is equality
+            </summary>
+            <param name="left">the left operand</param>
+            <param name="right">the right operand</param>
+            <returns></returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.op_Inequality(Permissions.SecurityRights,Permissions.SecurityRights)">
+            <summary>
+            it is not equal operator
+            </summary>
+            <param name="left">left operand</param>
+            <param name="right">right operand</param>
+            <returns></returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.ToArray">
+            <summary>
+            This is an Array to Give all of the values of SecurityRights's Properties
+            </summary>
+            <returns>Returns All The Properties of SecurityRights</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.HasRequiredPermissions(Permissions.PermissionLvl,System.Boolean[],Permissions.PermissionLvl[])">
+            <summary>
+            Determines whether the current SecurityRights object meets the specified requirements.
+            </summary>
+            <param name="minimumPermissionLevel">The minimum required Permissions level.</param>
+            <param name="requiredPermissions">An array of required permission values.</param>
+            <param name="blockedPermissionLevels">An array of blocked permission levels.</param>
+            <returns>True if the current SecurityRights object meets the specified requirements; otherwise, false.</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.WantID(Permissions.SecurityRights,System.String)">
+            <summary>
+            This is if u want ID
+            </summary>
+            <param name="rights">The SecurityRights instance required to make ID</param>
+            <param name="Name">The name o user</param>
+            <returns></returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.ToString">
+            <summary>
+            The ToString Method so it actually returns something good
+            </summary>
+            <returns>PermLvl the Permission Level of the object or The enum</returns>
+        </member>
+        <member name="M:Permissions.SecurityRights.FromID(System.Int32[])">
+            <summary>
+            This is the method that turns ID to SecurityRights
+            </summary>
+            <param name="RawData">The ID</param>
+            <exception cref="T:Permissions.IDException">Happens If it detects its null which Should not happen!</exception>
+        </member>
+        <member name="T:Permissions.CustomSecurityRights">
+            <summary>
+            This is the customizable version of SecurityRights!
+            It allows for total customization.
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.Groups">
+            <summary>
+            This Dictionary holds all the groups that have been created
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.RightsList">
+            <summary>
+            This Dictionary holds all the rights that have been created
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.ActiveGroup">
+            <summary>
+            The currently selected group to be the primary group.
+            </summary>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.ToString">
+            <summary>
+            The ToString() method overidden to match the requirements of CustomSecurityRights
+            </summary>
+            <returns>It returns the primary group</returns>
+        </member>
+        <member name="T:Permissions.CustomSecurityRights.Comparison">
+            <summary>
+            This class holds all the methods to compare CustomSecurityRights!
+            </summary>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Comparison.CheckGroup(System.String)">
+            <summary>
+            Method to compare two groups together
+            </summary>
+            <param name="groupName">The parameter used for comparason</param>
+            <returns>Returns true or false depending if the ActiveGroup matching the selected group.</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Comparison.CheckGroup(System.String,System.String[])">
+            <summary>
+            Method to compare two groups together and see if it equals one of the blocked groups.
+            </summary>
+            <param name="groupName">Used to compare ActiveGroup</param>
+            <param name="blockedGroups">All groups that ActiveGroup shouldn't be.</param>
+            <returns>True or False if ActiveGroup matches all conditions</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Comparison.CheckGroup(System.String,System.String[],System.String[])">
+            <summary>
+            Method to compare ActiveGroup and groupName, and if it equals an excemption group, then if it is part of one of the blocked groups.
+            </summary>
+            <param name="groupName">The group used to compare ActiveGroup</param>
+            <param name="excemptGroups">Groups Excempt from Checking</param>
+            <param name="blockedGroups">Groups not allowed to proceed</param>
+            <returns>True or False if ActiveGroup equals, is excempt, or is blocked.</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Comparison.CheckRight(System.String)">
+            <summary>
+            Method that compares all of the ActiveGroup rights to a right.
+            </summary>
+            <param name="rightName">The right to compare to ActiveGroup</param>
+            <returns>true if one Matches; false if it doesn't</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Comparison.CheckRight(System.String[])">
+            <summary>
+            Method that compares all of the ActiveGroup rights to an array of rights.
+            </summary>
+            <param name="rightName">Rights to compare to ActiveGroup</param>
+            <returns>true if all of them match; else false.</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Comparison.CheckRight(System.String[],System.String[])">
+            <summary>
+            Method that compares all of the ActiveGroup rights to an array of rights and blocked rights.
+            </summary>
+            <param name="rightName">Rights to compare to ActiveGroup.</param>
+            <param name="blockedRights">BlockedRights to compare to ActiveGroup</param>
+            <returns>true if all rights match and no blockedrights match; else false.</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Comparison.CheckRight(System.String,System.String[])">
+            <summary>
+            Method that compares all of the ActiveGroup rights to a right and blocked rights.
+            </summary>
+            <param name="rightName">A right to compare to ActiveGroup</param>
+            <param name="blockedRights">BlockedRight to compare to ActiveGroup</param>
+            <returns>true if it matches without any blocked rights; else false.</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Comparison.CheckRight(System.String[],System.String[],System.String[])">
+            <summary>
+            Method that compares all of the ActiveGroup rights to an array of rights unless excempt or blocked.
+            </summary>
+            <param name="rightName">Rights to compare to ActiveGroup</param>
+            <param name="excemptRights">Rights that excempt ActiveGroup</param>
+            <param name="blockedRights">Rights that block ActiveGroup</param>
+            <returns>true if all rights match and no blocked rights match unless if a excempt right matches; else false.</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Comparison.CheckRight(System.String,System.String[],System.String[])">
+            <summary>
+            Method that compares all of the ActiveGroup rights to a right unless excempt or blocked.
+            </summary>
+            <param name="rightName">Rights to compare to ActiveGroup</param>
+            <param name="excemptRights">Rights that excempt ActiveGroup</param>
+            <param name="blockedRights">Rights that block ActiveGroup</param>
+            <returns>true if all rights match and no blocked rights match unless if a excempt right matches; else false.</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Comparison.CheckAccessLevel(Permissions.CustomSecurityRights.RightType)">
+            <summary>
+            Method to compare AccessLevels using RightType
+            </summary>
+            <param name="rightType">Required RightType</param>
+            <returns>true if ActiveGroup meets RightType; else false.</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Comparison.CheckAccessLevel(Permissions.PermissionLvl)">
+            <summary>
+            Method to compare AccessLevels using Legacy version
+            </summary>
+            <param name="legacyRightType">Required PermissionLevel</param>
+            <returns>true if ActiveGroup meets PermissionLevel; else false.</returns>
+        </member>
+        <member name="T:Permissions.CustomSecurityRights.Group">
+            <summary>
+            The class that contains all the relevant data surrounding Groups.
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.Group.Name">
+            <summary>
+            The name of the group.
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.Group.RightType">
+            <summary>
+            The access level of the group.
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.Group.LegacyRightType">
+            <summary>
+            The permission level of the group.
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.Group.Rights">
+            <summary>
+            A group's rights.
+            </summary>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Group.#ctor(System.String,Permissions.CustomSecurityRights.RightType,Permissions.PermissionLvl)">
+            <summary>
+            Constructor of Group to make new groups.
+            </summary>
+            <param name="name">Name of this group.</param>
+            <param name="rightType">The access level of this group.</param>
+            <param name="legacyRightType">The permission level of this group.</param>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Group.AddRight(System.String)">
+            <summary>
+            Method to add a right to this group.
+            </summary>
+            <param name="right">The name of the right you want to add to this group.</param>
+            <exception cref="T:System.ArgumentException">This exception is triggered when you provide a null or wrong name of right!</exception>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Group.RemoveRight(System.String)">
+            <summary>
+            Method to remove a right from this group.
+            </summary>
+            <param name="right">The name of the right you wat to remove from this group.</param>
+            <exception cref="T:System.ArgumentException">This exception is triggered when you provide a null or wrong name of right!</exception>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Group.MakeActiveGroup">
+            <summary>
+            Method to make this method the primary group!
+            </summary>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Group.RemoveGroup">
+            <summary>
+            Removes group from the global groups dictionary and removes all info pertaining to this group. Cannot be undone.
+            </summary>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Group.UpdateRights(Permissions.CustomSecurityRights.Group)">
+            <summary>
+            Removes removed rights from the dictioinary from all groups.
+            </summary>
+            <param name="group">Group you want to update</param>
+            <exception cref="T:System.ArgumentException">This exception is triggered when you provide a null or wrong name of group!</exception>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Group.ToString">
+            <summary>
+            Override to the method ToString().
+            </summary>
+            <returns>The name of the group.</returns>
+        </member>
+        <member name="T:Permissions.CustomSecurityRights.Right">
+            <summary>
+            The class where all data pertaining to rights goes.
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.Right.Name">
+            <summary>
+            The name of the right.
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.Right.HazardsLevels">
+            <summary>
+            The total hazard level of the right.
+            </summary>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Right.#ctor(System.String,Permissions.CustomSecurityRights.HazardLevel)">
+            <summary>
+            Constructor of Right, is where you can create new rights.
+            </summary>
+            <param name="name">Name of right.</param>
+            <param name="hazardLevel">Total hazard level of right.</param>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Right.DeleteRight">
+            <summary>
+            Deletes a right from the global rights dictionary and removes all refrences from methods and removes all data with instance of right.
+            </summary>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.Right.ToString">
+            <summary>
+            overrides the ToString() method.
+            </summary>
+            <returns>The name of this right.</returns>
+        </member>
+        <member name="T:Permissions.CustomSecurityRights.HazardLevel">
+            <summary>
+            This is where HazardLevel get's calculated.
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.HazardLevel.WarningLevel">
+            <summary>
+            The authentication needed to run a command.
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.HazardLevel.AccessLevel">
+            <summary>
+            The level of access needed to use a right; if not met requires elevation.
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.HazardLevel.RuleElevationAlways">
+            <summary>
+            The ability to elevate no matter if you have the rule or not.
+            </summary>
+        </member>
+        <member name="P:Permissions.CustomSecurityRights.HazardLevel.RuleBypassEnabled">
+            <summary>
+            Grants access to all rules even if not given.
+            </summary>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.HazardLevel.#ctor(System.SByte,System.SByte,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor of hazard level.
+            </summary>
+            <param name="warningLevel">The authentication needed to run a command.</param>
+            <param name="accessLevel">The level of access needed to use a right; if not met requires elevation.</param>
+            <param name="ruleElevationAlways">The ability to elevate no matter if you have the rule or not.</param>
+            <param name="ruleBypassEnabled">Grants access to all rules even if not given.</param>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.HazardLevel.Clear">
+            <summary>
+            Resets all values to their default state.
+            </summary>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.HazardLevel.ToString">
+            <summary>
+            Overrides the method ToString().
+            </summary>
+            <returns>This instance's WarningLevel, AccessLevel, RuleElevationAlways boolean, and RuleBypassEnabled flag</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.HazardLevel.Equals(System.Object)">
+            <summary>
+            ...
+            </summary>
+            <param name="obj">...</param>
+            <returns>...</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.HazardLevel.Equals(Permissions.CustomSecurityRights.HazardLevel)">
+            <summary>
+            ...
+            </summary>
+            <param name="other">...</param>
+            <returns>...</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.HazardLevel.GetHashCode">
+            <summary>
+            ...
+            </summary>
+            <returns>...</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.HazardLevel.op_Equality(Permissions.CustomSecurityRights.HazardLevel,Permissions.CustomSecurityRights.HazardLevel)">
+            <summary>
+            ...
+            </summary>
+            <param name="left">...</param>
+            <param name="right">...</param>
+            <returns>...</returns>
+        </member>
+        <member name="M:Permissions.CustomSecurityRights.HazardLevel.op_Inequality(Permissions.CustomSecurityRights.HazardLevel,Permissions.CustomSecurityRights.HazardLevel)">
+            <summary>
+            ...
+            </summary>
+            <param name="left">...</param>
+            <param name="right">...</param>
+            <returns>...</returns>
+        </member>
+        <member name="T:Permissions.CustomSecurityRights.RightType">
+            <summary>
+            Fixed values that the RightType can be
+            </summary>
+        </member>
+        <member name="F:Permissions.CustomSecurityRights.RightType.Member">
+            <summary>
+            Default
+            </summary>
+        </member>
+        <member name="F:Permissions.CustomSecurityRights.RightType.VIP">
+            <summary>
+            Special Person
+            </summary>
+        </member>
+        <member name="F:Permissions.CustomSecurityRights.RightType.Privillaged">
+            <summary>
+            Someone that is trusted
+            </summary>
+        </member>
+        <member name="F:Permissions.CustomSecurityRights.RightType.Moderator">
+            <summary>
+            A moderator
+            </summary>
+        </member>
+        <member name="F:Permissions.CustomSecurityRights.RightType.Administrator">
+            <summary>
+            An Admin
+            </summary>
+        </member>
+        <member name="F:Permissions.CustomSecurityRights.RightType.Owner">
+            <summary>
+            Max Privillages
+            </summary>
+        </member>
+        <member name="T:Permissions.PermissionLvl">
+            <summary>
+            This is an Enum that contains All the possible values that SecurityRights can have
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.BLACKLISTED">
+            <summary>
+            BLACKLISTED!!!
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.Suspended">
+            <summary>
+            This is the Suspended value and means user BANNED
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.Untrusted">
+            <summary>
+            This is the Untrusted value and means user is Untrusted or SUS
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.Member">
+            <summary>
+            This is the Member value and is the most common
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.MVP">
+            <summary>
+            This is the MVP value and is a Tier above Member but is unused dont use or exception
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.Master">
+            <summary>
+            This is the Master value and is actually a Tier above member and contains VIP Privillages
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.Moderator">
+            <summary>
+            This is the Mod value I think u know what it is moderator...
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.Admin">
+            <summary>
+            ADMIN TIME
+            </summary>
+        </member>
+        <member name="F:Permissions.PermissionLvl.OWNER">
+            <summary>
+            Dangerous Use With Caution...
+            </summary>
+        </member>
+    </members>
+</doc>
